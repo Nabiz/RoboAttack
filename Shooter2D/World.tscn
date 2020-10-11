@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tileset/DungeonMap.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends StaticBody2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+    pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#    pass
+
+
+func _on_Area2D_body_entered(body):
+    queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20.3873, 18.9911 )
+
+[node name="World" type="Node2D"]
+
+[node name="DungeonMap" parent="." instance=ExtResource( 3 )]
+position = Vector2( -228.586, 126.992 )
+scale = Vector2( 3, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 156.971, 1728.95 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 2280, 706.432 )
+script = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_left = -19.5295
+margin_top = -18.2691
+margin_right = 20.4705
+margin_bottom = 21.7309
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -0.629944, 2.51984 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 2223.61, 935.738 )
+script = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4"]
+margin_left = -19.5295
+margin_top = -18.2691
+margin_right = 20.4705
+margin_bottom = 21.7309
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( -0.629944, 2.51984 )
+shape = SubResource( 2 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2551.66, 679.463 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2249.91, 814.274 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2125.49, 692.088 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2128.96, 904.359 )
