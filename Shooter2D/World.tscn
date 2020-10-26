@@ -40,6 +40,8 @@ scale = Vector2( 3, 3 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 156.971, 1728.95 )
 
+[node name="HUD" parent="Player" instance=ExtResource( 4 )]
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 2280, 706.432 )
 script = SubResource( 1 )
@@ -85,6 +87,8 @@ position = Vector2( 2125.49, 692.088 )
 
 [node name="Enemy8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2128.96, 904.359 )
+[connection signal="damage_taken" from="Player" to="Player/HUD" method="_on_Player_damage_taken"]
+[connection signal="update_ammo_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_ammo_HUD"]
+[connection signal="update_weapon_texture_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_weapon_texture_HUD"]
 
-[node name="HUD" parent="." instance=ExtResource( 4 )]
-[connection signal="damage_taken" from="Player" to="HUD" method="_on_Player_damage_taken"]
+[editable path="Player"]

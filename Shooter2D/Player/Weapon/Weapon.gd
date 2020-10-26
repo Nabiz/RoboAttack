@@ -1,13 +1,51 @@
 extends Node2D
 
 
-export (PackedScene) var Bullet
-export var ammo = 100
+export (PackedScene) var Blaster
+export (PackedScene) var Shotgun
+export (PackedScene) var Rifle
+var blaster
+var shotgun
+var rifle
+
+var current_weapon
+
+func _ready():
+	blaster = Blaster.instance()
+	shotgun = Shotgun.instance()
+	rifle = Rifle.instance()
+	add_child(blaster)
+	add_child(shotgun)
+	add_child(rifle)
+	current_weapon = blaster
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_shot") and ammo > 0:
-		var bullet = Bullet.instance()
-		get_tree().root.add_child(bullet)
-		bullet.rotation = get_parent().rotation
-		bullet.position = global_position
-		ammo-=1
+	change_weapon()
+	if current_weapon.detect_shot():
+		current_weapon.shot()
+		update_ammo_HUD()
+
+func change_weapon():
+	if Input.is_action_just_released("ui_blaster"):
+		current_weapon = blaster
+		update_HUD()
+	if Input.is_action_just_released("ui_shotgun"):
+		current_weapon = shotgun
+		update_HUD()
+	if Input.is_action_just_released("ui_rifle"):
+		current_weapon = rifle
+		update_HUD()
+
+func update_HUD():
+	update_ammo_HUD()
+	update_weapon_texture_HUD()
+
+signal update_ammo_HUD(ammo_text)
+
+func update_ammo_HUD():
+	emit_signal("update_ammo_HUD", current_weapon.get_ammo_text())
+
+signal update_weapon_texture_HUD(texture)
+
+func update_weapon_texture_HUD():
+	emit_signal("update_weapon_texture_HUD", current_weapon.get_texture())

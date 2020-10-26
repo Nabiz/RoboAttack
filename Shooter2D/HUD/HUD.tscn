@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://HUD/lifebar_fill.png" type="Texture" id=3]
 [ext_resource path="res://HUD/lifebar_bg.png" type="Texture" id=4]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=5]
+[ext_resource path="res://Player/Weapon/Rifle/rifle.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -36,8 +37,8 @@ anchor_left = 0.98
 anchor_top = 0.98
 anchor_right = 0.98
 anchor_bottom = 0.98
-margin_left = -224.0
-margin_top = -175.0
+margin_left = -302.0
+margin_top = -239.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 alignment = 2
@@ -46,41 +47,41 @@ __meta__ = {
 }
 
 [node name="GranadeContainer" type="HBoxContainer" parent="WeaponConteiner"]
-margin_right = 224.0
+margin_right = 302.0
 margin_bottom = 64.0
 size_flags_vertical = 0
 alignment = 2
 
 [node name="GranadeLabel" type="Label" parent="WeaponConteiner/GranadeContainer"]
-margin_left = 100.0
+margin_left = 186.0
 margin_top = 12.0
-margin_right = 156.0
+margin_right = 234.0
 margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
-text = "12"
+text = "3"
 
 [node name="GranadeTexture" type="TextureRect" parent="WeaponConteiner/GranadeContainer"]
-margin_left = 160.0
-margin_right = 224.0
+margin_left = 238.0
+margin_right = 302.0
 margin_bottom = 64.0
 texture = ExtResource( 2 )
 
 [node name="WeaponTexture" type="TextureRect" parent="WeaponConteiner"]
-margin_left = 80.0
+margin_left = 23.0
 margin_top = 68.0
-margin_right = 144.0
-margin_bottom = 132.0
+margin_right = 279.0
+margin_bottom = 196.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 
 [node name="AmmoLabel" type="Label" parent="WeaponConteiner"]
-margin_top = 136.0
-margin_right = 224.0
-margin_bottom = 175.0
+margin_top = 200.0
+margin_right = 302.0
+margin_bottom = 239.0
 size_flags_horizontal = 4
 custom_fonts/font = SubResource( 2 )
-text = "100/100"
+text = "333/333"
 align = 1
 valign = 1
 

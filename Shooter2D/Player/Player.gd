@@ -4,12 +4,15 @@ class_name Player
 
 var speed = 200
 var velocity = Vector2.ZERO
-var health = 100
+var health = 50
+
+func _ready():
+	emit_signal("damage_taken", health)
+	$Weapon.update_HUD()
 
 func _physics_process(delta):
 	get_movement_input()
 	velocity = move_and_slide(velocity)
-	emit_signal("damage_taken", health)
 
 func get_movement_input():
 	look_at(get_global_mouse_position())
@@ -28,5 +31,4 @@ signal damage_taken(health)
 
 func take_damage(dmg):
 	health -= dmg
-	print(health)
 	emit_signal("damage_taken", health)
