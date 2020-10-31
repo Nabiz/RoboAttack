@@ -2,9 +2,12 @@
 
 [ext_resource path="res://Player/Weapon/Shotgun/Shotgun.gd" type="Script" id=1]
 [ext_resource path="res://Player/Weapon/Shotgun/shotgun.png" type="Texture" id=2]
-[ext_resource path="res://Player/Weapon/Blaster/BlasterBullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Weapon/Shotgun/ShotgunBullet.tscn" type="PackedScene" id=3]
 
 [node name="Shotgun" type="Node2D"]
 script = ExtResource( 1 )
 ShotgunBullet = ExtResource( 3 )
 texture = ExtResource( 2 )
+
+[node name="CooldownTimer" type="Timer" parent="."]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

@@ -38,7 +38,7 @@ position = Vector2( -228.586, 126.992 )
 scale = Vector2( 3, 3 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 156.971, 1728.95 )
+position = Vector2( 404.288, 1629.3 )
 
 [node name="HUD" parent="Player" instance=ExtResource( 4 )]
 

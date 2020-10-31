@@ -20,7 +20,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Weapon" parent="." instance=ExtResource( 3 )]
-position = Vector2( 57.0856, 12.6056 )
+position = Vector2( 52.0856, 12.6056 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

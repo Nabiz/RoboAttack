@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var SPEED = 400
+var SPEED = 600
 
 func _physics_process(delta):
 	var collision = move_and_collide(Vector2(SPEED * delta,0).rotated(rotation))
