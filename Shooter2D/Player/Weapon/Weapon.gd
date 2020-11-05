@@ -4,6 +4,7 @@ extends Node2D
 export (PackedScene) var Blaster
 export (PackedScene) var Shotgun
 export (PackedScene) var Rifle
+export (PackedScene) var Granade
 var blaster
 var shotgun
 var rifle
@@ -24,6 +25,7 @@ func _process(delta):
 	if current_weapon.detect_shot():
 		current_weapon.shot()
 		update_ammo_HUD()
+	process_granade()
 
 func change_weapon():
 	if Input.is_action_just_released("ui_blaster"):
@@ -35,6 +37,14 @@ func change_weapon():
 	if Input.is_action_just_released("ui_rifle"):
 		current_weapon = rifle
 		update_HUD()
+
+func process_granade():
+	if Input.is_action_just_released("ui_granade"):
+		var granade = Granade.instance()
+		granade.position = global_position
+		granade.rotation = get_parent().rotation
+		get_tree().root.add_child(granade)
+		granade.throw(get_global_mouse_position())
 
 func update_HUD():
 	update_ammo_HUD()

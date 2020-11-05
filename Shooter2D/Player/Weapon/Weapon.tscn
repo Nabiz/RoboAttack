@@ -1,12 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player/Weapon/Weapon.gd" type="Script" id=1]
 [ext_resource path="res://Player/Weapon/Blaster/Blaster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player/Weapon/Rifle/Rifle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Weapon/Shotgun/Shotgun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Weapon/Grenade/Grenade.tscn" type="PackedScene" id=5]
+
+
 
 [node name="Weapon" type="Node2D"]
 script = ExtResource( 1 )
 Blaster = ExtResource( 2 )
 Shotgun = ExtResource( 4 )
 Rifle = ExtResource( 3 )
+Granade = ExtResource( 5 )
