@@ -7,7 +7,6 @@
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=5]
 [ext_resource path="res://Player/Weapon/Rifle/rifle.png" type="Texture" id=6]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
