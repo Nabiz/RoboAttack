@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tileset/DungeonMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/Turret/Turret.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends StaticBody2D
@@ -87,6 +88,9 @@ position = Vector2( 2125.49, 692.088 )
 
 [node name="Enemy8" parent="." instance=ExtResource( 2 )]
 position = Vector2( 2128.96, 904.359 )
+
+[node name="Turret" parent="." instance=ExtResource( 5 )]
+position = Vector2( 217.753, 1450.4 )
 [connection signal="damage_taken" from="Player" to="Player/HUD" method="_on_Player_damage_taken"]
 [connection signal="update_ammo_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_ammo_HUD"]
 [connection signal="update_granade_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_granade_HUD"]
