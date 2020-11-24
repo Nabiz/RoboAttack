@@ -4,7 +4,7 @@ class_name Player
 
 var speed = 200
 var velocity = Vector2.ZERO
-var health = 50
+var health = 100
 
 export (Texture) var blaster_texture
 export (Texture) var shotgun_texture
@@ -15,7 +15,7 @@ func _ready():
 	$Weapon.update_HUD()
 	change_corps_texture("blaster")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_movement_input()
 	velocity = move_and_slide(velocity)
 	if velocity.length() > 0:

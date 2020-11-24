@@ -6,7 +6,7 @@ var engaged = false
 var cooldown = false
 export (PackedScene) var TurretBullet
 
-func _process(delta):
+func _process(_delta):
 	aim_player()
 	var collider = ray_cast.get_collider()
 	if collider:

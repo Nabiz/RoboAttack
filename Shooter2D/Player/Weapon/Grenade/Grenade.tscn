@@ -8,6 +8,8 @@
 radius = 16.932
 
 [node name="Granade" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 16
 script = ExtResource( 2 )
 Explosion = ExtResource( 3 )
 

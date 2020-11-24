@@ -22,7 +22,7 @@ func _ready():
 	add_child(rifle)
 	current_weapon = blaster
 
-func _process(delta):
+func _process(_delta):
 	change_weapon()
 	if current_weapon.detect_shot():
 		current_weapon.shot()
