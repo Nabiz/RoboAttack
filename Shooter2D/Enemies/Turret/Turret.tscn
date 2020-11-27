@@ -30,6 +30,7 @@ position = Vector2( 16, 0 )
 texture = ExtResource( 1 )
 
 [node name="RayCast" type="RayCast2D" parent="Rifle"]
+visible = false
 position = Vector2( 87, 0 )
 enabled = true
 cast_to = Vector2( 500, 0 )
@@ -38,6 +39,7 @@ cast_to = Vector2( 500, 0 )
 shape = SubResource( 1 )
 
 [node name="EngageArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape" type="CollisionShape2D" parent="EngageArea"]
 shape = SubResource( 2 )

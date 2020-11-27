@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tileset/DungeonMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Turret/Turret.tscn" type="PackedScene" id=5]
@@ -22,69 +23,11 @@ position = Vector2( 404.288, 1629.3 )
 [node name="Turret" parent="." instance=ExtResource( 5 )]
 position = Vector2( 135.729, 927.141 )
 
-[node name="MeleeRobot2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2464.06, 571.43 )
-
-[node name="MeleeRobot8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2305.06, 571.43 )
-
-[node name="MeleeRobot3" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2054.06, 841.43 )
-
-[node name="MeleeRobot4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2404.06, 921.43 )
-
-[node name="MeleeRobot5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2318.06, 667.43 )
-
-[node name="MeleeRobot6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2180.06, 1181.43 )
-
 [node name="MeleeRobot9" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1525.13, 1652.57 )
 
-[node name="MeleeRobot10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2007.23, 1049.58 )
-
-[node name="MeleeRobot11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2322.6, 1049.58 )
-
-[node name="MeleeRobot12" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2009.01, 641.545 )
-
-[node name="MeleeRobot13" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2509.69, 826.852 )
-
-[node name="MeleeRobot14" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2539.98, 1142.23 )
-
-[node name="MeleeRobot15" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2131.95, 1359.61 )
-rotation = -0.519067
-
-[node name="MeleeRobot16" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2395.66, 1209.94 )
-rotation = -0.519067
-
-[node name="MeleeRobot17" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2568.49, 1411.28 )
-rotation = -0.519067
-
-[node name="MeleeRobot18" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2568.49, 1411.28 )
-rotation = -0.656865
-
-[node name="MeleeRobot7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2390.06, 1349.43 )
-
-[node name="MeleeRobot19" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2167.34, 1532.95 )
-
-[node name="MeleeRobot21" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2372.24, 1495.54 )
-
-[node name="MeleeRobot22" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2236.83, 1288.85 )
+[node name="RangeRobot" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1113.1, 1653 )
 [connection signal="damage_taken" from="Player" to="Player/HUD" method="_on_Player_damage_taken"]
 [connection signal="update_ammo_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_ammo_HUD"]
 [connection signal="update_granade_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_granade_HUD"]

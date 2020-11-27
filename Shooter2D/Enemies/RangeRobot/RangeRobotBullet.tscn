@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Player/Weapon/Rifle/RifleBullet.tscn" type="PackedScene" id=1]
+
+[node name="RangeRobotBullet" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 17
