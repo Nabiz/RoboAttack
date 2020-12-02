@@ -21,13 +21,37 @@ position = Vector2( 404.288, 1629.3 )
 [node name="HUD" parent="Player" instance=ExtResource( 4 )]
 
 [node name="Turret" parent="." instance=ExtResource( 5 )]
-position = Vector2( 135.729, 927.141 )
+position = Vector2( 2579.49, 1195.84 )
+
+[node name="Turret2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1897.84, 1249.58 )
+
+[node name="Turret3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1897.84, 1249.58 )
 
 [node name="MeleeRobot9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1525.13, 1652.57 )
+position = Vector2( 2079.5, 1248.1 )
+
+[node name="MeleeRobot10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2263.35, 1250.93 )
+
+[node name="MeleeRobot11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2450.03, 1248.11 )
 
 [node name="RangeRobot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1113.1, 1653 )
+position = Vector2( 1955.97, 1036.4 )
+
+[node name="RangeRobot2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2221.84, 1036.4 )
+rotation = -3.07778
+
+[node name="RangeRobot3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2419.83, 1039.23 )
+rotation = -3.07778
+
+[node name="RangeRobot4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2547.11, 1039.23 )
+rotation = -3.07778
 [connection signal="damage_taken" from="Player" to="Player/HUD" method="_on_Player_damage_taken"]
 [connection signal="update_ammo_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_ammo_HUD"]
 [connection signal="update_granade_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_granade_HUD"]

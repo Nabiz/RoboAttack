@@ -1,13 +1,51 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Enemies/RangeRobot/range_robot.png" type="Texture" id=1]
+[ext_resource path="res://Enemies/RangeRobot/range_robot_walk.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/RangeRobot/RangeRobot.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/RangeRobot/RangeRobotBullet.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 19.262, 32.802 )
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 160, 160 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 160, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 320, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 640, 0, 160, 160 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 800, 0, 160, 160 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 24.1898, 46.5477 )
+
+[sub_resource type="CircleShape2D" id=9]
 radius = 800.0
 
 [node name="RangeRobot" type="KinematicBody2D"]
@@ -16,31 +54,33 @@ collision_mask = 23
 script = ExtResource( 2 )
 RangeRobotBullet = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 37, 1 )
 rotation = 1.5708
-scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 1 )
+frames = SubResource( 7 )
+animation = "walk"
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2( -28.8572, 0.836929 )
-shape = SubResource( 1 )
+position = Vector2( -2.47936, 0.836929 )
+shape = SubResource( 8 )
 
 [node name="EngageArea" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EngageArea"]
-shape = SubResource( 2 )
+shape = SubResource( 9 )
 
 [node name="RayCast" type="RayCast2D" parent="."]
 visible = false
 enabled = true
 cast_to = Vector2( 850, 0 )
+collision_mask = 17
 
 [node name="CooldownTimer" type="Timer" parent="."]
 wait_time = 2.0
 
 [node name="WeaponPosition" type="Position2D" parent="."]
-position = Vector2( 34, 19 )
+position = Vector2( 74.9698, 26.8572 )
 [connection signal="body_entered" from="EngageArea" to="." method="_on_EngageArea_body_entered"]
 [connection signal="body_exited" from="EngageArea" to="." method="_on_EngageArea_body_exited"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

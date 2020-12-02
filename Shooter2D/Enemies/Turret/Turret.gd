@@ -2,9 +2,13 @@ extends StaticBody2D
 
 onready var ray_cast = $Rifle/RayCast
 var player
+var health = 2000
 var engaged = false
 var cooldown = false
 export (PackedScene) var TurretBullet
+
+func _ready():
+	add_to_group("enemies")
 
 func _process(_delta):
 	aim_player()
@@ -21,6 +25,15 @@ func _process(_delta):
 func aim_player():
 	if engaged:
 		$Rifle.look_at(player.position)
+
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0:
+		queue_free()
+	else:
+		modulate = Color(1, 0, 0)
+		yield(get_tree().create_timer(0.1), "timeout")
+		modulate = Color(1, 1, 1)
 
 func _on_EngageArea_body_entered(body):
 	if body.name == "Player":

@@ -1,5 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Weapon/Rifle/RifleBullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Turret/TurretBullet.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/Turret/turret_bullet.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 11.6418
 
 [node name="TurretBullet" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 17
+script = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="Collision" parent="." index="1"]
+position = Vector2( 8.5, -0.0625 )
+shape = SubResource( 1 )

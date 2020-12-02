@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/range_robot.png-5171ae1afd5731cdfe471729ec0c4266.stex"
+path="res://.import/range_robot_walk.png-7e0026f9d7554f95ea48ae23b10e167b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/RangeRobot/range_robot.png"
-dest_files=[ "res://.import/range_robot.png-5171ae1afd5731cdfe471729ec0c4266.stex" ]
+source_file="res://Enemies/RangeRobot/range_robot_walk.png"
+dest_files=[ "res://.import/range_robot_walk.png-7e0026f9d7554f95ea48ae23b10e167b.stex" ]
 
 [params]
 

@@ -6,14 +6,14 @@
 [ext_resource path="res://Enemies/Turret/turret_base.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 40 )
+extents = Vector2( 44.8049, 43.2836 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 600.0
 
 [node name="Turret" type="StaticBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 21
 script = ExtResource( 2 )
 TurretBullet = ExtResource( 3 )
 
@@ -34,8 +34,10 @@ visible = false
 position = Vector2( 87, 0 )
 enabled = true
 cast_to = Vector2( 500, 0 )
+collision_mask = 17
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2( -0.396851, -0.396851 )
 shape = SubResource( 1 )
 
 [node name="EngageArea" type="Area2D" parent="."]

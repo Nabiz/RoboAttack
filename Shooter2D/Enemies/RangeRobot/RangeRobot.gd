@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 
-var base_speed = 300
+var base_speed = 150
 var speed
 var velocity = Vector2.ZERO
 var health = 800
@@ -27,15 +27,17 @@ func calculate_velocity():
 		var collider = $RayCast.get_collider()
 		if collider:
 			if collider.name == "Player":
+				if not cooldown:
+					shot()
+					$CooldownTimer.start()
+					cooldown = true
 				if player.position.distance_to(position) <= 600:
 					velocity = Vector2.ZERO
-					if not cooldown:
-						shot()
-						$CooldownTimer.start()
-						cooldown = true
+					$AnimatedSprite.stop()
+					$AnimatedSprite.frame = 0
 				else:
 					velocity = Vector2(speed, 0).rotated(rotation)
-					#$AnimatedSprite.play()
+					$AnimatedSprite.play()
 	if knockback:
 		velocity = -Vector2(speed, 0).rotated(rotation)
 
@@ -73,6 +75,8 @@ func _on_EngageArea_body_exited(body):
 	if body.name == "Player":
 		engaged = false
 		velocity = Vector2.ZERO
+		$AnimatedSprite.stop()
+		$AnimatedSprite.frame = 0
 
 func _on_CooldownTimer_timeout():
 	cooldown = false
