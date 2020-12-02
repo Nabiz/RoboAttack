@@ -10,6 +10,8 @@ export (Texture) var blaster_texture
 export (Texture) var shotgun_texture
 export (Texture) var rifle_texture
 
+onready var weapon = $Weapon
+
 func _ready():
 	emit_signal("damage_taken", health)
 	$Weapon.update_HUD()
@@ -84,6 +86,8 @@ signal damage_taken(health)
 
 func take_damage(dmg):
 	health -= dmg
+	if health > 1000:
+		health = 1000
 	emit_signal("damage_taken", health)
 	if health > 0:
 		modulate = Color(1, 0, 0)

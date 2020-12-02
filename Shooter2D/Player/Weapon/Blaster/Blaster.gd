@@ -26,6 +26,12 @@ func shot():
 		bullet.position = global_position
 		ammo-=1
 
+func add_ammo(amount):
+	if ammo + amount > max_ammo:
+		ammo = max_ammo
+	else:
+		ammo += amount
+
 func get_ammo_text():
 	return String(ammo) + "/" + String(max_ammo)
 

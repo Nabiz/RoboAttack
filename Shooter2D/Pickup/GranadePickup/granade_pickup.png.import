@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy.png-8e909b03ba22506f6def5b569d70d46a.stex"
+path="res://.import/granade_pickup.png-c568793309796052b8971c730c5eedff.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemy/enemy.png"
-dest_files=[ "res://.import/enemy.png-8e909b03ba22506f6def5b569d70d46a.stex" ]
+source_file="res://Pickup/GranadePickup/granade_pickup.png"
+dest_files=[ "res://.import/granade_pickup.png-c568793309796052b8971c730c5eedff.stex" ]
 
 [params]
 
