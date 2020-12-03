@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Player/player_blaster.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Player/player_side_walk.png" type="Texture" id=6]
 [ext_resource path="res://Player/player_shotgun.png" type="Texture" id=7]
 [ext_resource path="res://Player/player_rfile.png" type="Texture" id=8]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -72,62 +73,62 @@ region = Rect2( 800, 0, 160, 160 )
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 160, 160 )
+region = Rect2( 800, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 160, 0, 160, 160 )
+region = Rect2( 640, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 320, 0, 160, 160 )
+region = Rect2( 480, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 480, 0, 160, 160 )
+region = Rect2( 320, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 640, 0, 160, 160 )
+region = Rect2( 160, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 800, 0, 160, 160 )
+region = Rect2( 0, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 800, 0, 160, 160 )
+region = Rect2( 0, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 640, 0, 160, 160 )
+region = Rect2( 160, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 480, 0, 160, 160 )
+region = Rect2( 320, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 320, 0, 160, 160 )
+region = Rect2( 480, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 160, 0, 160, 160 )
+region = Rect2( 640, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=24]
 flags = 4
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 160, 160 )
+region = Rect2( 800, 0, 160, 160 )
 
 [sub_resource type="AtlasTexture" id=25]
 flags = 4
@@ -173,12 +174,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
 "loop": true,
-"name": "walk",
+"name": "walk_backward",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
 "loop": true,
-"name": "walk_backward",
+"name": "walk",
 "speed": 8.0
 }, {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
@@ -219,3 +220,9 @@ position = Vector2( 75, 0 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="HUD" parent="." instance=ExtResource( 9 )]
+[connection signal="damage_taken" from="." to="HUD" method="_on_Player_damage_taken"]
+[connection signal="update_ammo_HUD" from="Weapon" to="HUD" method="_on_Weapon_update_ammo_HUD"]
+[connection signal="update_granade_HUD" from="Weapon" to="HUD" method="_on_Weapon_update_granade_HUD"]
+[connection signal="update_weapon_texture_HUD" from="Weapon" to="HUD" method="_on_Weapon_update_weapon_texture_HUD"]
