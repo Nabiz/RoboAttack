@@ -1,11 +1,16 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tileset/DungeonMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Turret/Turret.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/MeleeRobot/MeleeRobot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Pickup/Pickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Pickup/HealthPickup/HealthPickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Pickup/BlasterBulletPickup/BlasterBulletPickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Pickup/RifleBulletPickup/RifleBulletPickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Pickup/ShotgunBulletPickup/ShotgunBulletPickup.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Pickup/GranadePickup/GranadePickup.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 
@@ -15,46 +20,32 @@ scale = Vector2( 3, 3 )
 collision_layer = 16
 collision_mask = 31
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 404.288, 1629.3 )
-
-[node name="HUD" parent="Player" instance=ExtResource( 4 )]
-
-[node name="Turret" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2579.49, 1195.84 )
-
-[node name="Turret2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1897.84, 1249.58 )
-
 [node name="Turret3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1897.84, 1249.58 )
+position = Vector2( 1931.51, 793.86 )
 
 [node name="MeleeRobot9" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2079.5, 1248.1 )
-
-[node name="MeleeRobot10" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2263.35, 1250.93 )
-
-[node name="MeleeRobot11" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2450.03, 1248.11 )
+position = Vector2( 2425.22, 740.747 )
 
 [node name="RangeRobot" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1955.97, 1036.4 )
+position = Vector2( 2097.4, 535.782 )
 
-[node name="RangeRobot2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2221.84, 1036.4 )
-rotation = -3.07778
+[node name="HealthPickup" parent="." instance=ExtResource( 8 )]
+position = Vector2( 142.471, 1802.49 )
 
-[node name="RangeRobot3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2419.83, 1039.23 )
-rotation = -3.07778
+[node name="Pickup" parent="." instance=ExtResource( 7 )]
+position = Vector2( 656.691, 1437.47 )
 
-[node name="RangeRobot4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2547.11, 1039.23 )
-rotation = -3.07778
-[connection signal="damage_taken" from="Player" to="Player/HUD" method="_on_Player_damage_taken"]
-[connection signal="update_ammo_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_ammo_HUD"]
-[connection signal="update_granade_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_granade_HUD"]
-[connection signal="update_weapon_texture_HUD" from="Player/Weapon" to="Player/HUD" method="_on_Weapon_update_weapon_texture_HUD"]
+[node name="BlasterBulletPickup" parent="." instance=ExtResource( 9 )]
+position = Vector2( 157.144, 1434.51 )
 
-[editable path="Player"]
+[node name="RifleBulletPickup" parent="." instance=ExtResource( 10 )]
+position = Vector2( 157.145, 1544.51 )
+
+[node name="ShotgunBulletPickup" parent="." instance=ExtResource( 11 )]
+position = Vector2( 145.92, 1634.31 )
+
+[node name="GranadePickup" parent="." instance=ExtResource( 12 )]
+position = Vector2( 635.314, 1764.51 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 360.337, 1617.74 )
