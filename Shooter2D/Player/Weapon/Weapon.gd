@@ -9,7 +9,7 @@ export (PackedScene) var Granade
 var blaster
 var shotgun
 var rifle
-var granade_count = 3
+var granade_count = 0
 
 var current_weapon
 

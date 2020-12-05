@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Shooter2D"
-run/main_scene="res://World.tscn"
+run/main_scene="res://Levels/Level01/Level01.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -93,7 +93,11 @@ ui_granade={
 2d_render/layer_5="Environment"
 2d_physics/layer_5="Environment"
 
+[physics]
+
+common/physics_fps=120
+
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 environment/default_environment="res://default_env.tres"

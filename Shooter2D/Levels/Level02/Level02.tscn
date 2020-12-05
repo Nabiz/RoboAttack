@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level02/Level02Map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/MeleeRobot/MeleeRobot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Pickup/HealthPickup/HealthPickup.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Pickup/ShotgunBulletPickup/ShotgunBulletPickup.tscn" type="PackedScene" id=6]
+
+[node name="Level02" type="Node2D"]
+
+[node name="Level02Map" parent="." instance=ExtResource( 2 )]
+
+[node name="HealthPickup" parent="." instance=ExtResource( 5 )]
+position = Vector2( -338.596, -927.94 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="HealthPickup3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1692.5, -127.07 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="HealthPickup4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1428.2, 1020.89 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="HealthPickup5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 67.7472, 1028.03 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="ShotgunBulletPickup" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1511.25, 0.989746 )
+
+[node name="ShotgunBulletPickup2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1691.35, 0.989929 )
+
+[node name="ShotgunBulletPickup3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1879.94, 5.22766 )
+
+[node name="RangeRobot" parent="." instance=ExtResource( 1 )]
+position = Vector2( -40.433, -863.364 )
+rotation = 1.60008
+
+[node name="RangeRobot2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1122.61, -922.824 )
+rotation = -3.13395
+
+[node name="RangeRobot3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1699.83, -225 )
+rotation = -1.55261
+
+[node name="RangeRobot4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 413.045, 613.279 )
+rotation = -1.55261
+
+[node name="RangeRobot5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 647.977, 610.61 )
+rotation = -1.55261
+
+[node name="MeleeRobot" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1656.89, -918.427 )
+rotation = -3.13924
+
+[node name="MeleeRobot2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1496.71, 888.947 )
+rotation = -1.2386
+
+[node name="MeleeRobot3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1704.95, 939.67 )
+rotation = -1.56968
+
+[node name="MeleeRobot4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1915.85, 888.947 )
+rotation = -1.74015
+
+[node name="MeleeRobot5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 346.08, 747.453 )
+rotation = -1.2386
+
+[node name="MeleeRobot6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 548.976, 750.123 )
+rotation = -1.56968
+
+[node name="MeleeRobot7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 754.541, 739.444 )
+rotation = -1.74015
+
+[node name="RangeRobot6" parent="." instance=ExtResource( 1 )]
+position = Vector2( -742.864, 656.09 )
+rotation = -1.55261
+
+[node name="RangeRobot7" parent="." instance=ExtResource( 1 )]
+position = Vector2( -507.932, 653.422 )
+rotation = -1.55261
+
+[node name="MeleeRobot8" parent="." instance=ExtResource( 4 )]
+position = Vector2( -809.829, 790.265 )
+rotation = -1.2386
+
+[node name="MeleeRobot9" parent="." instance=ExtResource( 4 )]
+position = Vector2( -606.933, 792.934 )
+rotation = -1.56968
+
+[node name="MeleeRobot10" parent="." instance=ExtResource( 4 )]
+position = Vector2( -401.368, 782.255 )
+rotation = -1.74015
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2.37842, 21.4058 )
+rotation = -1.62676

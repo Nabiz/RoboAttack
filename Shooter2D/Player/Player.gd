@@ -4,7 +4,7 @@ class_name Player
 
 var speed = 200
 var velocity = Vector2.ZERO
-var health = 1000
+var health = 2000
 
 export (Texture) var blaster_texture
 export (Texture) var shotgun_texture
@@ -86,10 +86,12 @@ signal damage_taken(health)
 
 func take_damage(dmg):
 	health -= dmg
-	if health > 1000:
-		health = 1000
+	if health > 2000:
+		health = 2000
 	emit_signal("damage_taken", health)
 	if health > 0:
 		modulate = Color(1, 0, 0)
 		yield(get_tree().create_timer(0.1), "timeout")
 		modulate = Color(1, 1, 1)
+	else:
+		get_tree().reload_current_scene()

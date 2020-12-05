@@ -5,7 +5,6 @@ var base_speed = 150
 var speed
 var velocity = Vector2.ZERO
 var health = 800
-var power = 1
 var player
 var engaged = false
 var knockback = false
@@ -62,8 +61,9 @@ func start_knockback(knockback_speed):
 	speed = knockback_speed
 
 func stop_knockback():
-	knockback = false
 	set_collision_mask_bit(1, true)
+	yield(get_tree().create_timer(0.2), "timeout")
+	knockback = false
 	speed = base_speed
 
 func _on_EngageArea_body_entered(body):

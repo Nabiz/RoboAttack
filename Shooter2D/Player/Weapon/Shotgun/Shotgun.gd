@@ -2,7 +2,7 @@ extends Node2D
 
 export (PackedScene) var ShotgunBullet
 
-var ammo = 20
+var ammo = 0
 var max_ammo = 20
 export (Texture) var texture
 

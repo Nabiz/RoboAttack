@@ -2,7 +2,7 @@ extends Node2D
 
 export (PackedScene) var BlasterBullet
 
-var ammo = 100
+var ammo = 0
 var max_ammo = 100
 export (Texture) var texture
 

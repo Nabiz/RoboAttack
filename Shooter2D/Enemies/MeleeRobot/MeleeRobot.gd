@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-var base_speed = 180
+var base_speed = 160
 var speed
 var velocity = Vector2.ZERO
 var health = 1000
-var power = 5
+var power = 10
 var player
 var engaged = false
 var knockback = false
@@ -51,8 +51,9 @@ func start_knockback(knockback_speed):
 	speed = knockback_speed
 
 func stop_knockback():
-	knockback = false
 	set_collision_mask_bit(1, true)
+	yield(get_tree().create_timer(0.2), "timeout")
+	knockback = false
 	speed = base_speed
 
 func _on_EngageArea_body_entered(body):
