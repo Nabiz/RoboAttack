@@ -68,6 +68,7 @@ shape = SubResource( 8 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EngageArea"]
+visible = false
 shape = SubResource( 9 )
 
 [node name="RayCast" type="RayCast2D" parent="."]

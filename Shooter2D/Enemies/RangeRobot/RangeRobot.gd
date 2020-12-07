@@ -18,7 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	calculate_velocity()
-	var collision = move_and_collide(velocity*delta)
+	move_and_collide(velocity*delta)
 
 func calculate_velocity():
 	if engaged:
