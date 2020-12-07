@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Weapon/Shotgun/Shotgun.gd" type="Script" id=1]
 [ext_resource path="res://Player/Weapon/Shotgun/shotgun.png" type="Texture" id=2]
 [ext_resource path="res://Player/Weapon/Shotgun/ShotgunBullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Weapon/Blaster/BlasterShotAudioStreamPlayer.tscn" type="PackedScene" id=4]
 
 [node name="Shotgun" type="Node2D"]
 script = ExtResource( 1 )
 ShotgunBullet = ExtResource( 3 )
 texture = ExtResource( 2 )
+BulletAudioStream = ExtResource( 4 )
 
 [node name="CooldownTimer" type="Timer" parent="."]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

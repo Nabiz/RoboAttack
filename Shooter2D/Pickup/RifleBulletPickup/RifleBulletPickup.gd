@@ -7,4 +7,4 @@ func add_resource(player, amount):
 		if player.weapon.rifle.ammo < player.weapon.rifle.max_ammo:
 			player.weapon.rifle.add_ammo(amount)
 			player.weapon.update_ammo_HUD()
-			queue_free()
+			remove_pickup()

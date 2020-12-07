@@ -5,6 +5,7 @@ export (PackedScene) var BlasterBullet
 var ammo = 50
 var max_ammo = 50
 export (Texture) var texture
+export (PackedScene) var BlasterAudioStream
 
 var cooldown = false
 onready var cooldown_timer = $CooldownTimer
@@ -18,6 +19,7 @@ func _on_Cooldown_timeout():
 
 func shot():
 	if ammo > 0:
+		play_audio_stream()
 		cooldown = true
 		cooldown_timer.start()
 		var bullet = BlasterBullet.instance()
@@ -25,6 +27,10 @@ func shot():
 		bullet.rotation = get_parent().get_parent().rotation
 		bullet.position = global_position
 		ammo-=1
+
+func play_audio_stream():
+	var audio_stream = BlasterAudioStream.instance()
+	add_child(audio_stream)
 
 func add_ammo(amount):
 	if ammo + amount > max_ammo:

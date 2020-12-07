@@ -18,7 +18,7 @@ position = Vector2( -19, 0 )
 texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -15.75, -64.25, 0.25, -64.25, 24.25, -32.25, 24.25, 31.75, 0.25, 63.75, -15.75, 63.75, -31.75, 63.75, -7.75, 23.75, -7.75, -16.25, -31.75, -56.25 )
+polygon = PoolVector2Array( -63.75, -72.25, -31.75, -80.25, 0.25, -64.25, 24.25, -32.25, 24.25, 31.75, 0.25, 63.75, -31.75, 79.75, -63.75, 71.75, -31.75, 63.75, -7.75, 23.75, -7.75, -16.25, -23.75, -48.25 )
 [connection signal="body_entered" from="." to="." method="_on_ShotgunBullet_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_ShotgunBullet_body_exited"]
 [connection signal="timeout" from="LifeTime" to="." method="_on_LifeTime_timeout"]

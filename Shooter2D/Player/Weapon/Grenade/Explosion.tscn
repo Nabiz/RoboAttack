@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Weapon/Grenade/Explosion.gd" type="Script" id=1]
 [ext_resource path="res://Player/Weapon/Grenade/explosion.png" type="Texture" id=2]
+[ext_resource path="res://Music/Explosion1.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 76.9117
@@ -57,5 +58,8 @@ frames = SubResource( 8 )
 
 [node name="LifeTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Explosion_body_entered"]
 [connection signal="timeout" from="LifeTimer" to="." method="_on_LifeTimer_timeout"]
