@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Techno-Randomness_Looping.ogg-0570c5e69fb6200343eff84c8fadbc04.oggstr"
+
+[deps]
+
+source_file="res://Music/Techno-Randomness_Looping.ogg"
+dest_files=[ "res://.import/Techno-Randomness_Looping.ogg-0570c5e69fb6200343eff84c8fadbc04.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Laser-Ricochet.wav-3a995561ea1ebcb99b880d23e2c3342b.sample"
+
+[deps]
+
+source_file="res://Music/Laser-Ricochet.wav"
+dest_files=[ "res://.import/Laser-Ricochet.wav-3a995561ea1ebcb99b880d23e2c3342b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

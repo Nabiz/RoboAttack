@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player/Weapon/Blaster/BlasterShotAudioStreamPlayer.gd" type="Script" id=1]
+[ext_resource path="res://Music/Laser-Shot-1.wav" type="AudioStream" id=2]
+
+[node name="BlasterShotAudioStreamPlayer" type="AudioStreamPlayer2D"]
+stream = ExtResource( 2 )
+volume_db = -20.0
+autoplay = true
+script = ExtResource( 1 )
+[connection signal="finished" from="." to="." method="_on_BlasterShotAudioStreamPlayer_finished"]

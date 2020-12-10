@@ -1,0 +1,103 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Player/Weapon/Grenade/grenade.png" type="Texture" id=2]
+[ext_resource path="res://HUD/lifebar_fill.png" type="Texture" id=3]
+[ext_resource path="res://HUD/lifebar_bg.png" type="Texture" id=4]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=5]
+[ext_resource path="res://Player/Weapon/Rifle/rifle.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 396, 53 )
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 396, 53 )
+axis_stretch_horizontal = 2
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="WeaponConteiner" type="VBoxContainer" parent="."]
+anchor_left = 0.98
+anchor_top = 0.98
+anchor_right = 0.98
+anchor_bottom = 0.98
+margin_left = -302.0
+margin_top = -271.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GranadeContainer" type="HBoxContainer" parent="WeaponConteiner"]
+margin_right = 302.0
+margin_bottom = 96.0
+size_flags_vertical = 0
+alignment = 2
+
+[node name="GranadeLabel" type="Label" parent="WeaponConteiner/GranadeContainer"]
+margin_left = 154.0
+margin_top = 28.0
+margin_right = 202.0
+margin_bottom = 67.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+
+[node name="GranadeTexture" type="TextureRect" parent="WeaponConteiner/GranadeContainer"]
+margin_left = 206.0
+margin_right = 302.0
+margin_bottom = 96.0
+texture = ExtResource( 2 )
+
+[node name="WeaponTexture" type="TextureRect" parent="WeaponConteiner"]
+margin_left = 23.0
+margin_top = 100.0
+margin_right = 279.0
+margin_bottom = 228.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 6 )
+
+[node name="AmmoLabel" type="Label" parent="WeaponConteiner"]
+margin_top = 232.0
+margin_right = 302.0
+margin_bottom = 271.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+text = "333/333"
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.02
+anchor_bottom = 0.02
+margin_right = 395.0
+margin_bottom = 63.0
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+max_value = 2000.0
+step = 1.0
+value = 2000.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
