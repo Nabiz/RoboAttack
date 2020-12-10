@@ -1,5 +1,5 @@
 extends AudioStreamPlayer2D
 
 
-func _on_Timer_timeout():
+func _on_BlasterShotAudioStreamPlayer_finished():
 	queue_free()

@@ -6,6 +6,8 @@ var health = 2000
 var engaged = false
 var cooldown = false
 export (PackedScene) var TurretBullet
+export (PackedScene) var DamageAudioStream
+export (PackedScene) var ShotAudioStream
 
 func _ready():
 	add_to_group("enemies")
@@ -16,6 +18,7 @@ func _process(_delta):
 	if collider:
 		if collider.name == "Player" and not cooldown:
 			cooldown = true
+			play_shot_audio_stream()
 			$CooldownTimer.start()
 			var bullet = TurretBullet.instance()
 			bullet.rotation = $Rifle.rotation
@@ -28,12 +31,21 @@ func aim_player():
 
 func take_damage(dmg):
 	health -= dmg
+	play_damage_audio_stream()
 	if health <= 0:
 		queue_free()
 	else:
 		modulate = Color(1, 0, 0)
 		yield(get_tree().create_timer(0.1), "timeout")
 		modulate = Color(1, 1, 1)
+
+func play_damage_audio_stream():
+	var damage_audio_stream = DamageAudioStream.instance()
+	add_child(damage_audio_stream)
+
+func play_shot_audio_stream():
+	var audio_stream = ShotAudioStream.instance()
+	add_child(audio_stream)
 
 func _on_EngageArea_body_entered(body):
 	if body.name == "Player":

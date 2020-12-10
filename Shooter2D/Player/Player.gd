@@ -23,6 +23,8 @@ func _physics_process(_delta):
 	if velocity.length() > 0:
 		calculate_leg_animation()
 		$LegAnimatedSprite.play()
+		if $WalkAudioStreamPlayer.playing == false:
+			$WalkAudioStreamPlayer.play()
 	else:
 		$LegAnimatedSprite.set_animation("walk")
 		$LegAnimatedSprite.frame = 0
