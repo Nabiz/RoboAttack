@@ -17,7 +17,7 @@
 [node name="Level03Map" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -3.5636, -281.524 )
+position = Vector2( -3.89423, -270.004 )
 rotation = 1.53433
 z_index = 1
 
@@ -35,6 +35,24 @@ position = Vector2( 738.465, 2417.8 )
 
 [node name="Turret6" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1743.4, 2421.36 )
+
+[node name="Turret7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3338.46, 841.419 )
+
+[node name="Turret8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3489.65, 843.939 )
+
+[node name="Turret9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3492.17, 969.931 )
+
+[node name="Turret10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2741.26, 496.201 )
+
+[node name="Turret11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2610.23, 496.201 )
+
+[node name="Turret12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2610.23, 614.633 )
 
 [node name="HealthPickup" parent="." instance=ExtResource( 4 )]
 position = Vector2( -317.16, 687.774 )
@@ -69,6 +87,9 @@ position = Vector2( 1584.36, 2168.24 )
 [node name="HealthPickup8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2845.18, 2061.23 )
 
+[node name="HealthPickup9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3347.64, 960.158 )
+
 [node name="RifleBulletPickup5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2840.09, 1975.81 )
 
@@ -85,13 +106,13 @@ position = Vector2( 1278, 1388 )
 position = Vector2( 1284, 1556 )
 
 [node name="RangeRobot4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2815.43, 2407.95 )
+position = Vector2( 3331.43, 2189.95 )
 
 [node name="RangeRobot5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3073.35, 2413.46 )
+position = Vector2( 3337.35, 1995.46 )
 
 [node name="RangeRobot6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3300, 2413.2 )
+position = Vector2( 3332, 2403.2 )
 
 [node name="MeleeRobot" parent="." instance=ExtResource( 10 )]
 position = Vector2( 935.444, 2202.3 )
@@ -108,6 +129,16 @@ position = Vector2( 2261.1, 2371.57 )
 
 [node name="MeleeRobot4" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2257.54, 2057.98 )
+rotation = 3.08986
+
+[node name="MeleeRobot6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2993.63, 753.572 )
+
+[node name="MeleeRobot7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2709.63, 1013.38 )
+
+[node name="MeleeRobot8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3328.47, 533.476 )
 rotation = 3.08986
 
 [node name="BlasterBulletPickup" parent="." instance=ExtResource( 8 )]

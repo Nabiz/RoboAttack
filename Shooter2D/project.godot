@@ -21,8 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Shooter2D"
-run/main_scene="res://Levels/Level01/Level01.tscn"
+run/main_scene="res://Menu/Menu.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
 
 [input]
 

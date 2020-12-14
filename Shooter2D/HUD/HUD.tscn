@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Player/Weapon/Grenade/grenade.png" type="Texture" id=2]
@@ -6,12 +6,14 @@
 [ext_resource path="res://HUD/lifebar_bg.png" type="Texture" id=4]
 [ext_resource path="res://HUD/HUD.gd" type="Script" id=5]
 [ext_resource path="res://Player/Weapon/Rifle/rifle.png" type="Texture" id=6]
+[ext_resource path="res://HUD/speakers.png" type="Texture" id=7]
+[ext_resource path="res://HUD/muted_speakers.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -31,6 +33,8 @@ axis_stretch_horizontal = 2
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 5 )
+speakers = ExtResource( 7 )
+muted_speakers = ExtResource( 8 )
 
 [node name="WeaponConteiner" type="VBoxContainer" parent="."]
 anchor_left = 0.98
@@ -57,7 +61,7 @@ margin_left = 154.0
 margin_top = 28.0
 margin_right = 202.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 
 [node name="GranadeTexture" type="TextureRect" parent="WeaponConteiner/GranadeContainer"]
@@ -80,7 +84,7 @@ margin_top = 232.0
 margin_right = 302.0
 margin_bottom = 271.0
 size_flags_horizontal = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "333/333"
 align = 1
 valign = 1
@@ -101,3 +105,18 @@ percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MuteButton" type="TextureButton" parent="."]
+anchor_left = 0.98
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.02
+margin_left = -64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="mouse_entered" from="MuteButton" to="." method="_on_MuteButton_mouse_entered"]
+[connection signal="mouse_exited" from="MuteButton" to="." method="_on_MuteButton_mouse_exited"]
+[connection signal="pressed" from="MuteButton" to="." method="_on_MuteButton_pressed"]
