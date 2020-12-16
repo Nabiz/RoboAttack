@@ -1,12 +1,14 @@
 extends Area2D
 
+var damage = 1000
+
 func _ready():
 	$AnimatedSprite.play()
 	$AudioStreamPlayer2D.play()
 
 func _on_Explosion_body_entered(body):
-	if body.is_in_group("enemies"):
-		body.queue_free()
+	if body.is_in_group("enemies") or body.name == "Player":
+		body.take_damage(damage)
 
 
 func _on_LifeTimer_timeout():

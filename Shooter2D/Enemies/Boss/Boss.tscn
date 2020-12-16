@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Boss/Boss.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/Turret/TurretBullet.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Weapon/Blaster/BlasterShotAudioStreamPlayer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enemies/Boss/boss_walk.png" type="Texture" id=5]
+[ext_resource path="res://Player/Weapon/Grenade/Explosion.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Boss/BossHUD/BossHUD.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -48,6 +50,8 @@ animations = [ {
 script = ExtResource( 2 )
 RangeRobotBullet = ExtResource( 3 )
 ShotAudioStream = ExtResource( 4 )
+Explosion = ExtResource( 6 )
+BossHUD = ExtResource( 7 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 7 )
