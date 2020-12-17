@@ -19,7 +19,6 @@
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( -3.89423, -270.004 )
 rotation = 1.53433
-z_index = 1
 
 [node name="Turret2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 276.179, 677.083 )
@@ -34,25 +33,34 @@ position = Vector2( 314.397, 1607.08 )
 position = Vector2( 738.465, 2417.8 )
 
 [node name="Turret6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1743.4, 2421.36 )
+position = Vector2( 1919.6, 2413.35 )
 
 [node name="Turret7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3338.46, 841.419 )
+position = Vector2( 3264.46, 955.419 )
 
 [node name="Turret8" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3489.65, 843.939 )
+position = Vector2( 3415.65, 957.939 )
 
 [node name="Turret9" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3492.17, 969.931 )
+position = Vector2( 3418.17, 1083.93 )
 
 [node name="Turret10" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2741.26, 496.201 )
+position = Vector2( 3479.26, 372.201 )
 
 [node name="Turret11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2610.23, 496.201 )
+position = Vector2( 3348.23, 372.201 )
 
 [node name="Turret12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2610.23, 614.633 )
+position = Vector2( 3480.23, 496.633 )
+
+[node name="Turret13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2641.26, 674.201 )
+
+[node name="Turret14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2510.23, 674.201 )
+
+[node name="Turret15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2510.23, 792.633 )
 
 [node name="HealthPickup" parent="." instance=ExtResource( 4 )]
 position = Vector2( -317.16, 687.774 )
@@ -87,8 +95,14 @@ position = Vector2( 1584.36, 2168.24 )
 [node name="HealthPickup8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2845.18, 2061.23 )
 
-[node name="HealthPickup9" parent="." instance=ExtResource( 4 )]
-position = Vector2( 3347.64, 960.158 )
+[node name="HealthPickup10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3071.64, 1406.16 )
+
+[node name="HealthPickup11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2689.64, 864.158 )
+
+[node name="HealthPickup12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3265.64, 1152.16 )
 
 [node name="RifleBulletPickup5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2840.09, 1975.81 )
@@ -132,13 +146,13 @@ position = Vector2( 2257.54, 2057.98 )
 rotation = 3.08986
 
 [node name="MeleeRobot6" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2993.63, 753.572 )
+position = Vector2( 3035.63, 753.572 )
 
 [node name="MeleeRobot7" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2709.63, 1013.38 )
+position = Vector2( 2837.63, 991.38 )
 
 [node name="MeleeRobot8" parent="." instance=ExtResource( 10 )]
-position = Vector2( 3328.47, 533.476 )
+position = Vector2( 3326.47, 581.476 )
 rotation = 3.08986
 
 [node name="BlasterBulletPickup" parent="." instance=ExtResource( 8 )]
@@ -152,6 +166,18 @@ position = Vector2( 3073.6, 1689.14 )
 
 [node name="GranadePickup3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3146.65, 1585.8 )
+
+[node name="GranadePickup4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3216.65, 1079.8 )
+
+[node name="GranadePickup5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3306.65, 1081.8 )
+
+[node name="GranadePickup6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2638.65, 781.8 )
+
+[node name="GranadePickup7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2728.65, 783.8 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
