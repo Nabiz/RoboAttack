@@ -9,11 +9,11 @@
 [ext_resource path="res://HUD/speakers.png" type="Texture" id=7]
 [ext_resource path="res://HUD/muted_speakers.png" type="Texture" id=8]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -61,7 +61,7 @@ margin_left = 154.0
 margin_top = 28.0
 margin_right = 202.0
 margin_bottom = 67.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "0"
 
 [node name="GranadeTexture" type="TextureRect" parent="WeaponConteiner/GranadeContainer"]
@@ -84,7 +84,7 @@ margin_top = 232.0
 margin_right = 302.0
 margin_bottom = 271.0
 size_flags_horizontal = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "333/333"
 align = 1
 valign = 1

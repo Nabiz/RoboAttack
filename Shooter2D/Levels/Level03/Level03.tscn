@@ -187,4 +187,4 @@ autoplay = true
 
 [node name="EndLevelArea" parent="." instance=ExtResource( 12 )]
 position = Vector2( 3073.21, -193.663 )
-next_level = "res://Levels/Level03/Level03.tscn"
+next_level = "res://Levels/Level04/Level04.tscn"

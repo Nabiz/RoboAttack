@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Space-Cannon.ogg-704c8998cc85dbe7d053c243c737e50c.oggstr"
+
+[deps]
+
+source_file="res://Music/Space-Cannon.ogg"
+dest_files=[ "res://.import/Space-Cannon.ogg-704c8998cc85dbe7d053c243c737e50c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

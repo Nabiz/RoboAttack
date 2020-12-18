@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Enemies/Boss/Boss.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Enemies/Boss/boss_walk.png" type="Texture" id=5]
 [ext_resource path="res://Player/Weapon/Grenade/Explosion.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enemies/Boss/BossHUD/BossHUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enemies/Boss/Rocket/Rocket.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Music/Space-Cannon.wav" type="AudioStream" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -52,6 +54,7 @@ RangeRobotBullet = ExtResource( 3 )
 ShotAudioStream = ExtResource( 4 )
 Explosion = ExtResource( 6 )
 BossHUD = ExtResource( 7 )
+Rocket = ExtResource( 8 )
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 7 )
@@ -64,3 +67,14 @@ position = Vector2( 90.948, 43.3386 )
 
 [node name="WalkAudioStreamPlayer2D" parent="." index="6"]
 pitch_scale = 1.0
+
+[node name="RocketCooldownTimer" type="Timer" parent="." index="7"]
+wait_time = 5.0
+
+[node name="RocketPosition" type="Position2D" parent="." index="8"]
+position = Vector2( 89.5246, -42.3785 )
+
+[node name="RocketAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource( 9 )
+volume_db = -10.0
+[connection signal="timeout" from="RocketCooldownTimer" to="." method="_on_RocketCooldownTimer_timeout"]

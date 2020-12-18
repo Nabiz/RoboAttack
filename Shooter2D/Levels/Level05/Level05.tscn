@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Level05/Level05Map.tscn" type="PackedScene" id=2]
@@ -12,6 +12,11 @@
 [ext_resource path="res://Pickup/GranadePickup/GranadePickup.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Levels/Level05/Level05.gd" type="Script" id=11]
 [ext_resource path="res://Music/Techno-Randomness_Looping.ogg" type="AudioStream" id=12]
+[ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 13 )
 
 [node name="Level05" type="Node2D"]
 script = ExtResource( 11 )
@@ -111,19 +116,43 @@ position = Vector2( 1654.45, -668.285 )
 
 [node name="WinCanvasLayer" type="CanvasLayer" parent="Player"]
 
-[node name="WinAcceptDialog" type="AcceptDialog" parent="Player/WinCanvasLayer"]
+[node name="WinAcceptDialog" type="WindowDialog" parent="Player/WinCanvasLayer"]
 visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -111.0
-margin_top = -37.5
-margin_right = 111.0
-margin_bottom = 37.5
-window_title = "Congratulation!!!"
-dialog_text = "You save the world from cyborg Arm4Ti-S and his evil robots!"
-dialog_autowrap = true
+margin_left = -402.412
+margin_top = -184.973
+margin_right = 399.588
+margin_bottom = 140.027
+window_title = "CONGRATULATION!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player/WinCanvasLayer/WinAcceptDialog"]
+margin_left = 26.6606
+margin_top = 14.6561
+margin_right = 766.661
+margin_bottom = 179.656
+custom_fonts/font = SubResource( 1 )
+text = "You save the world
+from
+cyborg \"ARM 4 Ti-s\"
+and his evil robots!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Player/WinCanvasLayer/WinAcceptDialog"]
+margin_left = 292.67
+margin_top = 203.344
+margin_right = 497.67
+margin_bottom = 299.344
+custom_fonts/font = SubResource( 1 )
+text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,7 +198,7 @@ position = Vector2( 1745.29, 139.297 )
 stream = ExtResource( 12 )
 volume_db = -30.0
 autoplay = true
-[connection signal="confirmed" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_confirmed"]
 [connection signal="modal_closed" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_modal_closed"]
 [connection signal="mouse_entered" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_entered"]
 [connection signal="mouse_exited" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_exited"]
+[connection signal="pressed" from="Player/WinCanvasLayer/WinAcceptDialog/Button" to="." method="_on_Button_pressed"]
