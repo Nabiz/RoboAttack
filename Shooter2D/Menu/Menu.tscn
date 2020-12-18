@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/menu_background.png" type="Texture" id=2]
+[ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="MenuBackground" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.1
+anchor_top = 0.95
+anchor_right = 0.9
+anchor_bottom = 0.95
+margin_top = -288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlsLabel" type="Label" parent="MainContainer"]
+margin_right = 1024.0
+margin_bottom = 89.0
+custom_fonts/font = SubResource( 1 )
+text = "w, a, s, d - movement
+lmb - shot
+1, 2, 3 - change weapon
+g - grenade"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayContainer" type="HBoxContainer" parent="MainContainer"]
+margin_top = 93.0
+margin_right = 1024.0
+margin_bottom = 288.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayMarginContainer" type="MarginContainer" parent="MainContainer/PlayContainer"]
+margin_right = 440.0
+margin_bottom = 195.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="PlayButton" type="Button" parent="MainContainer/PlayContainer/PlayMarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 390.0
+margin_bottom = 145.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 2 )
+text = "PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel" type="Label" parent="MainContainer/PlayContainer"]
+margin_left = 444.0
+margin_right = 1024.0
+margin_bottom = 195.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+text = "Credits:
+
+Game by Nabiz
+
+Music by Eric Matyas
+www.soundimage.org"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.95
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.5
+margin_left = -258.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelLabel" type="Label" parent="LevelContainer"]
+margin_left = 62.0
+margin_right = 196.0
+margin_bottom = 20.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 1 )
+text = "skip to:"
+
+[node name="Level2Button" type="Button" parent="LevelContainer"]
+margin_top = 24.0
+margin_right = 258.0
+margin_bottom = 96.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3Button" type="Button" parent="LevelContainer"]
+margin_top = 100.0
+margin_right = 258.0
+margin_bottom = 172.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4Button" type="Button" parent="LevelContainer"]
+margin_top = 176.0
+margin_right = 258.0
+margin_bottom = 248.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Level 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5Button" type="Button" parent="LevelContainer"]
+margin_top = 252.0
+margin_right = 258.0
+margin_bottom = 324.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Level 5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MainContainer/PlayContainer/PlayMarginContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="LevelContainer/Level2Button" to="." method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="LevelContainer/Level3Button" to="." method="_on_Level3Button_pressed"]
+[connection signal="pressed" from="LevelContainer/Level4Button" to="." method="_on_Level4Button_pressed"]
+[connection signal="pressed" from="LevelContainer/Level5Button" to="." method="_on_Level5Button_pressed"]

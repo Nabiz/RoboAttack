@@ -1,0 +1,204 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level05/Level05Map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/Boss/Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/Turret/Turret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/RangeRobot/RangeRobot.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/MeleeRobot/MeleeRobot.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Pickup/HealthPickup/HealthPickup.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Pickup/RifleBulletPickup/RifleBulletPickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Pickup/ShotgunBulletPickup/ShotgunBulletPickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Pickup/GranadePickup/GranadePickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Levels/Level05/Level05.gd" type="Script" id=11]
+[ext_resource path="res://Music/Techno-Randomness_Looping.ogg" type="AudioStream" id=12]
+[ext_resource path="res://HUD/induction/induction.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 13 )
+
+[node name="Level05" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="GranadePickup" parent="." instance=ExtResource( 10 )]
+position = Vector2( -190.273, -80.8661 )
+
+[node name="GranadePickup2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -190.273, -8 )
+
+[node name="GranadePickup4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1743.73, 668 )
+
+[node name="GranadePickup5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2467.73, 80 )
+
+[node name="GranadePickup6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1721.73, -668 )
+rotation = -0.0109073
+
+[node name="GranadePickup3" parent="." instance=ExtResource( 10 )]
+position = Vector2( -192, 64 )
+
+[node name="HealthPickup" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1001.86, -179.643 )
+
+[node name="HealthPickup2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 995.123, 69.5438 )
+
+[node name="HealthPickup3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1563.84, -434.201 )
+
+[node name="HealthPickup4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1906.56, -423.859 )
+
+[node name="HealthPickup5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2263.76, -155.075 )
+
+[node name="HealthPickup9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1340.55, 656.245 )
+
+[node name="HealthPickup10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2121.7, 661.285 )
+
+[node name="HealthPickup11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1277.55, -628.874 )
+
+[node name="HealthPickup12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2169.57, -623.835 )
+
+[node name="HealthPickup6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2270.24, 89.7481 )
+
+[node name="HealthPickup7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1572.07, 444.446 )
+
+[node name="HealthPickup8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1841.46, 451.181 )
+
+[node name="RifleBulletPickup" parent="." instance=ExtResource( 8 )]
+position = Vector2( -192, -192 )
+
+[node name="RifleBulletPickup2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -128, -192 )
+
+[node name="RifleBulletPickup3" parent="." instance=ExtResource( 8 )]
+position = Vector2( -64, -192 )
+
+[node name="RifleBulletPickup4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1819.73, 668.284 )
+
+[node name="RifleBulletPickup5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2468.12, 149.147 )
+
+[node name="RifleBulletPickup6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1792.18, -668.759 )
+
+[node name="ShotgunBulletPickup" parent="." instance=ExtResource( 9 )]
+position = Vector2( -192, 192 )
+
+[node name="ShotgunBulletPickup2" parent="." instance=ExtResource( 9 )]
+position = Vector2( -128, 192 )
+
+[node name="ShotgunBulletPickup3" parent="." instance=ExtResource( 9 )]
+position = Vector2( -64, 192 )
+
+[node name="ShotgunBulletPickup4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1673.52, 670.877 )
+
+[node name="ShotgunBulletPickup5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2470.24, 7.6532 )
+
+[node name="ShotgunBulletPickup6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1654.45, -668.285 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="WinCanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="WinAcceptDialog" type="WindowDialog" parent="Player/WinCanvasLayer"]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -402.412
+margin_top = -184.973
+margin_right = 399.588
+margin_bottom = 140.027
+window_title = "CONGRATULATION!!!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Player/WinCanvasLayer/WinAcceptDialog"]
+margin_left = 26.6606
+margin_top = 14.6561
+margin_right = 766.661
+margin_bottom = 179.656
+custom_fonts/font = SubResource( 1 )
+text = "You save the world
+from
+cyborg \"ARM 4 Ti-s\"
+and his evil robots!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Player/WinCanvasLayer/WinAcceptDialog"]
+margin_left = 292.67
+margin_top = 203.344
+margin_right = 497.67
+margin_bottom = 299.344
+custom_fonts/font = SubResource( 1 )
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Boss" parent="Enemies" instance=ExtResource( 3 )]
+position = Vector2( 1902.18, -11.1274 )
+
+[node name="Turret" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 993.887, 655.257 )
+
+[node name="Turret2" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 996.715, -676.932 )
+
+[node name="Turret3" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2453.36, -671.275 )
+
+[node name="Turret4" parent="Enemies" instance=ExtResource( 4 )]
+position = Vector2( 2444.87, 680.713 )
+
+[node name="MeleeRobot" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1269.16, -424.999 )
+
+[node name="MeleeRobot2" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 1263.5, 389.588 )
+
+[node name="MeleeRobot3" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 2219.51, -422.171 )
+
+[node name="MeleeRobot4" parent="Enemies" instance=ExtResource( 6 )]
+position = Vector2( 2227.99, 429.186 )
+
+[node name="RangeRobot3" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1757.99, -169.031 )
+
+[node name="RangeRobot4" parent="Enemies" instance=ExtResource( 5 )]
+position = Vector2( 1745.29, 139.297 )
+
+[node name="Level05Map" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -30.0
+autoplay = true
+[connection signal="modal_closed" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_modal_closed"]
+[connection signal="mouse_entered" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_entered"]
+[connection signal="mouse_exited" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_exited"]
+[connection signal="pressed" from="Player/WinCanvasLayer/WinAcceptDialog/Button" to="." method="_on_Button_pressed"]

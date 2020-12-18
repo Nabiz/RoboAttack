@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/Level03/Level03Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,15 +11,15 @@
 [ext_resource path="res://Pickup/GranadePickup/GranadePickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/MeleeRobot/MeleeRobot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/Techno-Randomness_Looping.ogg" type="AudioStream" id=11]
+[ext_resource path="res://LevelObjects/EndLevelArea/EndLevelArea.tscn" type="PackedScene" id=12]
 
 [node name="Level03" type="Node2D"]
 
 [node name="Level03Map" parent="." instance=ExtResource( 1 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -3.5636, -281.524 )
+position = Vector2( -3.89423, -270.004 )
 rotation = 1.53433
-z_index = 1
 
 [node name="Turret2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 276.179, 677.083 )
@@ -34,7 +34,34 @@ position = Vector2( 314.397, 1607.08 )
 position = Vector2( 738.465, 2417.8 )
 
 [node name="Turret6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1743.4, 2421.36 )
+position = Vector2( 1919.6, 2413.35 )
+
+[node name="Turret7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3264.46, 955.419 )
+
+[node name="Turret8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3415.65, 957.939 )
+
+[node name="Turret9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3418.17, 1083.93 )
+
+[node name="Turret10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3479.26, 372.201 )
+
+[node name="Turret11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3348.23, 372.201 )
+
+[node name="Turret12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3480.23, 496.633 )
+
+[node name="Turret13" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2641.26, 674.201 )
+
+[node name="Turret14" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2510.23, 674.201 )
+
+[node name="Turret15" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2510.23, 792.633 )
 
 [node name="HealthPickup" parent="." instance=ExtResource( 4 )]
 position = Vector2( -317.16, 687.774 )
@@ -69,6 +96,15 @@ position = Vector2( 1584.36, 2168.24 )
 [node name="HealthPickup8" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2845.18, 2061.23 )
 
+[node name="HealthPickup10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3071.64, 1406.16 )
+
+[node name="HealthPickup11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2689.64, 864.158 )
+
+[node name="HealthPickup12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3265.64, 1152.16 )
+
 [node name="RifleBulletPickup5" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2840.09, 1975.81 )
 
@@ -85,13 +121,13 @@ position = Vector2( 1278, 1388 )
 position = Vector2( 1284, 1556 )
 
 [node name="RangeRobot4" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2815.43, 2407.95 )
+position = Vector2( 3331.43, 2189.95 )
 
 [node name="RangeRobot5" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3073.35, 2413.46 )
+position = Vector2( 3337.35, 1995.46 )
 
 [node name="RangeRobot6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3300, 2413.2 )
+position = Vector2( 3332, 2403.2 )
 
 [node name="MeleeRobot" parent="." instance=ExtResource( 10 )]
 position = Vector2( 935.444, 2202.3 )
@@ -110,6 +146,16 @@ position = Vector2( 2261.1, 2371.57 )
 position = Vector2( 2257.54, 2057.98 )
 rotation = 3.08986
 
+[node name="MeleeRobot6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3035.63, 753.572 )
+
+[node name="MeleeRobot7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2837.63, 991.38 )
+
+[node name="MeleeRobot8" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3326.47, 581.476 )
+rotation = 3.08986
+
 [node name="BlasterBulletPickup" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2738.62, 1977.8 )
 
@@ -122,7 +168,23 @@ position = Vector2( 3073.6, 1689.14 )
 [node name="GranadePickup3" parent="." instance=ExtResource( 9 )]
 position = Vector2( 3146.65, 1585.8 )
 
+[node name="GranadePickup4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3216.65, 1079.8 )
+
+[node name="GranadePickup5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3306.65, 1081.8 )
+
+[node name="GranadePickup6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2638.65, 781.8 )
+
+[node name="GranadePickup7" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2728.65, 783.8 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -30.0
 autoplay = true
+
+[node name="EndLevelArea" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3073.21, -193.663 )
+next_level = "res://Levels/Level04/Level04.tscn"

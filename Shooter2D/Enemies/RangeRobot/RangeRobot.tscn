@@ -46,7 +46,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 24.1898, 46.5477 )
+extents = Vector2( 23.762, 63.8838 )
 
 [sub_resource type="CircleShape2D" id=9]
 radius = 800.0
@@ -91,7 +91,7 @@ position = Vector2( 74.9698, 26.8572 )
 [node name="WalkAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = -10.0
-pitch_scale = 4.0
+pitch_scale = 3.0
 [connection signal="body_entered" from="EngageArea" to="." method="_on_EngageArea_body_entered"]
 [connection signal="body_exited" from="EngageArea" to="." method="_on_EngageArea_body_exited"]
 [connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
