@@ -170,3 +170,6 @@ stream = ExtResource( 12 )
 volume_db = -30.0
 autoplay = true
 [connection signal="confirmed" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_confirmed"]
+[connection signal="modal_closed" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_modal_closed"]
+[connection signal="mouse_entered" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_entered"]
+[connection signal="mouse_exited" from="Player/WinCanvasLayer/WinAcceptDialog" to="." method="_on_WinAcceptDialog_mouse_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Levels/Level03/Level03Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Pickup/GranadePickup/GranadePickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Enemies/MeleeRobot/MeleeRobot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/Techno-Randomness_Looping.ogg" type="AudioStream" id=11]
+[ext_resource path="res://LevelObjects/EndLevelArea/EndLevelArea.tscn" type="PackedScene" id=12]
 
 [node name="Level03" type="Node2D"]
 
@@ -183,3 +184,7 @@ position = Vector2( 2728.65, 783.8 )
 stream = ExtResource( 11 )
 volume_db = -30.0
 autoplay = true
+
+[node name="EndLevelArea" parent="." instance=ExtResource( 12 )]
+position = Vector2( 3073.21, -193.663 )
+next_level = "res://Levels/Level03/Level03.tscn"
